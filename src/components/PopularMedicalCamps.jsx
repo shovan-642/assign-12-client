@@ -1,53 +1,35 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
+import { Link } from "react-router-dom";
 import usePopularCamps from "../hooks/usePopularCamps";
+import CampCard from "../pages/shared/CampCard";
+import { Button } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 
 const PopularMedicalCamps = () => {
   const [popularCamps] = usePopularCamps();
   const accenCamps = popularCamps
     .slice()
     .sort((a, b) => b.participant_count - a.participant_count);
-  console.log(accenCamps);
 
   return (
     <div>
       <div className="grid grid-cols-3 gap-5">
-        {accenCamps.map((camp, idx) => (
-          <div key={idx}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={camp.image}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {camp.camp_name}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                        {camp.description}
-                  </Typography>
-                  <Typography>
-                    {camp.participant_count}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-              </CardActions>
-            </Card>
-          </div>
-        ))}
+        {accenCamps.map((camp, idx) =><CampCard key={idx} camp={camp}></CampCard>)}
       </div>
+      <div>
+          <Link to={"/available_camps"}>
+            {" "}
+            <Button
+              className="uppercase"
+              variant="contained"
+              endIcon={<SendIcon />}
+            >
+              See all campaign
+            </Button>
+          </Link>
+        </div>
+
+
+
     </div>
   );
 };
