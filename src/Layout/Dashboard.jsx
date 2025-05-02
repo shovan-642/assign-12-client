@@ -4,7 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const Dashboard = () => {
     return (
         <div className='flex'>
-            <div className='w-64 min-h-full bg-black text-white'>
+            <div className='w-64 min-h-full bg-black text-white shadow-2xl'>
                 {/* user dashboard */}
                 <li><NavLink to={"analytics"}>Analytics</NavLink></li>
                 <li><NavLink to={"payment-history"}>Payment History</NavLink></li>
