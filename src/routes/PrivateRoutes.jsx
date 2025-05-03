@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { CircularProgress } from '@material-tailwind/react';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const PrivateRoutes = ({children}) => {
