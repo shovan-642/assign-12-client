@@ -7,8 +7,6 @@ const Navbar = () => {
 
   const {user, logout}= useContext(AuthContext)
 
-  console.log(user)
-
   const menuLinks = <>
     <li><NavLink to={"/"}>Home</NavLink></li>
     <li><NavLink to={"/available_camps"}>Available Camps</NavLink></li>

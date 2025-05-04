@@ -37,7 +37,7 @@ const CampCard = ({camp}) => {
           </CardActionArea>
           </div>
           <CardActions className="">
-                <Link to={"/camp-details/:campId"}>          <Button variant="contained" color="success">
+                <Link to={`/camp-details/${_id}`}>          <Button variant="contained" color="success">
   Details
 </Button></Link>
           </CardActions>
