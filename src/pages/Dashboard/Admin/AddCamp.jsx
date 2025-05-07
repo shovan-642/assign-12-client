@@ -86,10 +86,7 @@ const AddCamp = () => {
             <label>Camp Description</label>
             <textarea type="text" {...register("description", { required: true })} />
             </div>
-
-          
-          
-
+            
           <button type="submit" className="btn btn-ghost">Submit</button>
         </form>
       </div>
