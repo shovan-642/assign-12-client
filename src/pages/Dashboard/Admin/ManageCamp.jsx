@@ -77,7 +77,7 @@ const ManageCamp = () => {
                     {camp.healthcare_professional_name}
                   </TableCell>
                   <TableCell align="left">
-                    <Link to={`update-camp/${camp._id}`}>
+                    <Link to={`/dashboard/update-camp/${camp._id}`}>
                       <button className="">
                         <FaEdit className=" text-green-600 text-lg hover:text-green-900 hover:cursor-grab"></FaEdit>
                       </button>

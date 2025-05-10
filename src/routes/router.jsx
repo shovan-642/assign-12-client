@@ -69,7 +69,8 @@ export const router = createBrowserRouter([
       },
       {
         path:"update-camp/:campId",
-        element: <UpdateCamp></UpdateCamp>
+        element: <UpdateCamp></UpdateCamp>,
+        loader: ({params})=>fetch(`http://localhost:5000/update-camp/${params.campId}`)
       },
       {
         path:"manage-camp",
