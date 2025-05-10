@@ -12,8 +12,7 @@ const useCamps = () => {
         }
     })
 
-    return [camps, loading, refetch
-    ]
+    return [camps, loading, refetch]
 };
 
 export default useCamps;

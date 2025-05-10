@@ -14,6 +14,7 @@ import ManageCamp from "../pages/Dashboard/Admin/ManageCamp";
 import ManageRegisteredCamp from "../pages/Dashboard/Admin/ManageRegisteredCamp";
 import PrivateRoutes from "./PrivateRoutes";
 import AdminRoutes from "./AdminRoutes";
+import UpdateCamp from "../pages/Dashboard/Admin/UpdateCamp";
 
 export const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
       {
         path:"add-camp",
         element: <AdminRoutes><AddCamp></AddCamp></AdminRoutes>
+      },
+      {
+        path:"update-camp/:campId",
+        element: <UpdateCamp></UpdateCamp>
       },
       {
         path:"manage-camp",
