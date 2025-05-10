@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.MuiButton-root{
+    pointer-events: auto !important;
+}
+
+.input-fields{
+    pointer-events: auto !important;
+}

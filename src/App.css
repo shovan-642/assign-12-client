@@ -1,1 +1,7 @@
+.MuiButton-root{
+    pointer-events: auto !important;
+}
 
+.input-fields{
+    pointer-events: auto !important;
+}

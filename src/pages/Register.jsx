@@ -9,7 +9,7 @@ import {
 import SocialLogin from "../components/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
-import { Link, useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 
@@ -38,7 +38,7 @@ const Register = () => {
           };
           axiosPublic.post("/users", userData)
           .then((res) => {
-            if (res.data.insertedID) {
+            if (res.data.insertedId) {
               reset();
               Swal.fire({
                 position: "top-end",
@@ -58,8 +58,9 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="relative">
       <Card
+        
         shadow={false}
         className="md:px-24 md:py-14 py-8 border border-gray-300"
       >
@@ -82,10 +83,10 @@ const Register = () => {
                 Your Name
               </Typography>
               <Input
-                {...register("name", { required: false })}
+                {...register("name", { required: "Name is Required" })}
                 size="lg"
                 name="name"
-                placeholder="name@mail.com"
+                placeholder="Your Name"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
                   className: "before:content-none after:content-none",
@@ -95,7 +96,7 @@ const Register = () => {
                 Your Photo URL
               </Typography>
               <Input
-                {...register("photoURL", { required: false })}
+                {...register("photoURL", { required: "Photo URL is Required" })}
                 size="lg"
                 name="photoURL"
                 type="url"
@@ -109,7 +110,7 @@ const Register = () => {
                 Your Email
               </Typography>
               <Input
-                {...register("email", { required: true })}
+                {...register("email", { required: "Email is Required" })}
                 size="lg"
                 placeholder="name@mail.com"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -121,7 +122,7 @@ const Register = () => {
                 Password
               </Typography>
               <Input
-                {...register("password", { required: true })}
+                {...register("password", { required: "Password is Required" })}
                 type="password"
                 size="lg"
                 placeholder="********"
@@ -132,16 +133,18 @@ const Register = () => {
               />
             </div>
             <Button
+              
               type="submit"
               className="mt-6 bg-black text-white px-6 py-2"
               fullWidth
             >
               sign up
             </Button>
-            <Typography color="gray" className="mt-4 text-center font-normal">
-              Already have an account? <Link to={"/login"}>Sign Up</Link>
-            </Typography>
+
           </form>
+          <Typography color="gray" className="mt-4 text-center font-normal">
+              Already have an account? <Link style={{pointerEvents: "auto"}} className="underline" to={"/login"}>Login</Link>
+            </Typography>
           <SocialLogin></SocialLogin>
         </CardBody>
       </Card>
