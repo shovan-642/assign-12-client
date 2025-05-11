@@ -19,6 +19,7 @@ const CampDetails = () => {
   const { user } = useContext(AuthContext);
   const { register, handleSubmit, reset } = useForm();
   const axiosSecure = useAxiosSecure();
+
   const navigate = useNavigate()
 
   const {
@@ -75,7 +76,7 @@ const CampDetails = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        navigate("/")
+        navigate("/dashboard/registered-camps")
   }  
 
   };

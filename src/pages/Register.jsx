@@ -48,6 +48,7 @@ const Register = () => {
                 timer: 1500,
               });
               navigate("/");
+              
             }
           });
         });
@@ -143,7 +144,7 @@ const Register = () => {
 
           </form>
           <Typography color="gray" className="mt-4 text-center font-normal">
-              Already have an account? <Link style={{pointerEvents: "auto"}} className="underline" to={"/login"}>Login</Link>
+              Already have an account? <Link className="underline" to={"/login"}>Login</Link>
             </Typography>
           <SocialLogin></SocialLogin>
         </CardBody>

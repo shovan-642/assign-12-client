@@ -2,10 +2,12 @@ import { menu } from '@material-tailwind/react';
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useAdmin from '../../hooks/useAdmin';
 
 const Navbar = () => {
 
   const {user, logout}= useContext(AuthContext)
+  const [isAdmin] = useAdmin()
 
   const menuLinks = <>
     <li><NavLink to={"/"}>Home</NavLink></li>
@@ -46,7 +48,7 @@ const handleLogOut = ()=>{
   <div className="dropdown dropdown-end">
 
       {
-        user ? <>      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        user ? <> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img
             alt="Tailwind CSS Navbar component"
@@ -62,7 +64,12 @@ const handleLogOut = ()=>{
             <span className="badge">New</span>
           </a>
         </li>
-        <li><Link to={'/dashboard'}>Dashboard</Link></li>
+        {
+          user && isAdmin && <li><Link to={'/dashboard/admin-profile'}>Dashboard</Link></li>
+        }
+        {
+          user && !isAdmin && <li><Link to={'/dashboard/participant-profile'}>Dashboard</Link></li>
+        }
         <li><a onClick={handleLogOut}>Logout</a></li>
       </ul></> : <><Link to={"/register"}><button className='btn btn-accent'>JOIN US</button></Link></>
       }

@@ -15,6 +15,8 @@ import ManageRegisteredCamp from "../pages/Dashboard/Admin/ManageRegisteredCamp"
 import PrivateRoutes from "./PrivateRoutes";
 import AdminRoutes from "./AdminRoutes";
 import UpdateCamp from "../pages/Dashboard/Admin/UpdateCamp";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome";
+import ParticipantHome from "../pages/Dashboard/Participant/ParticipantHome";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,10 @@ export const router = createBrowserRouter([
     children: [
       // user dashboard
       {
+        path:"participant-profile",
+        element: <ParticipantHome></ParticipantHome>
+      },
+      {
         path:"analytics",
         element: <Analytics></Analytics>
       },
@@ -63,6 +69,10 @@ export const router = createBrowserRouter([
       },
 
       // admin dashboard
+      {
+        path:"admin-profile",
+        element: <AdminRoutes><AdminHome></AdminHome></AdminRoutes>
+      },
       {
         path:"add-camp",
         element: <AdminRoutes><AddCamp></AddCamp></AdminRoutes>
