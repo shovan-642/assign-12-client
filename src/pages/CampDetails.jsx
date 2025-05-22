@@ -62,6 +62,8 @@ const CampDetails = () => {
       ...data,
       gender,
       camp_id: _id,
+      payment_status: "unpaid",
+      confirmation_status: "pending",
     };
     console.log(registeredCampData);
     const regCampRes = await axiosSecure.post("/registered-camp", registeredCampData )

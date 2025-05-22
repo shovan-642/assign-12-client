@@ -17,6 +17,7 @@ import AdminRoutes from "./AdminRoutes";
 import UpdateCamp from "../pages/Dashboard/Admin/UpdateCamp";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 import ParticipantHome from "../pages/Dashboard/Participant/ParticipantHome";
+import Payment from "../pages/Dashboard/Participant/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path:"analytics",
         element: <Analytics></Analytics>
+      },
+      {
+        path:"payment",
+        element: <Payment></Payment>
       },
       {
         path:"payment-history",

@@ -71,7 +71,7 @@ const handleLogOut = ()=>{
           user && !isAdmin && <li><Link to={'/dashboard/participant-profile'}>Dashboard</Link></li>
         }
         <li><a onClick={handleLogOut}>Logout</a></li>
-      </ul></> : <><Link to={"/register"}><button className='btn btn-accent'>JOIN US</button></Link></>
+      </ul></> : <><Link to={"/login"}><button className='btn btn-accent'>JOIN US</button></Link></>
       }
     </div>
 
